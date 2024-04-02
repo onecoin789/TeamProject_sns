@@ -28,6 +28,12 @@
             android:name=".MyPageActivity"
             android:exported="false">
         </activity>
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+
+        </activity>
     </application>
 
 </manifest>
