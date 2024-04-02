@@ -3,6 +3,7 @@ package com.example.teamproject_sns
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
 import android.widget.TextView
 
 class StartActivity : AppCompatActivity() {
@@ -12,10 +13,12 @@ class StartActivity : AppCompatActivity() {
 
         val tvLogin = findViewById<TextView>(R.id.tv_login)
 
-//        btnLogin.setOnClickListener {
-//            intent = Intent(this, SignUpActivity::class.java)
-//            StartActivity(intent)
-//        }
+        val btnJoin = findViewById<Button>(R.id.btn_signUp)
+
+       btnJoin.setOnClickListener {
+           val intent = Intent(this, JoinActivity::class.java)
+           startActivity(intent)
+       }
 
         tvLogin.setOnClickListener {
             val intent = Intent(this,LoginActivity::class.java)
