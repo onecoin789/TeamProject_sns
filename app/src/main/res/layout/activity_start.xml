@@ -21,7 +21,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:text="TIL :"
+        android:text="@string/start_title"
         android:textStyle="bold"
         android:textSize="40sp"
         app:layout_constraintTop_toBottomOf="@id/iv_logo"
@@ -32,7 +32,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:text="Today I Learned"
+        android:text="@string/til"
         android:textStyle="bold"
         android:textSize="23sp"
         app:layout_constraintTop_toBottomOf="@id/tv_til"
@@ -40,14 +40,16 @@
         app:layout_constraintEnd_toEndOf="parent"/>
 
 
-    <android.widget.Button
+    <Button
         android:id="@+id/btn_signUp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="17dp"
         android:background="@drawable/btn_yellow"
-        android:text="시작하기"
+        android:backgroundTint="@null"
+        android:text="@string/signIn_signup"
         android:textSize="18sp"
+        android:textAllCaps="false"
         app:layout_constraintBottom_toTopOf="@id/tv_login"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -56,7 +58,8 @@
         android:id="@+id/tv_checkAccount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="이미 계정이 있나요?"
+        android:text="@string/main_check"
+        android:textColor="@color/darkGray"
         android:textSize="15sp"
         android:layout_marginBottom="70dp"
         android:layout_marginEnd="10dp"
@@ -72,15 +75,15 @@
         android:layout_height="25dp"
         android:background="@null"
         android:gravity="bottom"
-        android:text="로그인"
+        android:text="@string/signIn_login"
+        android:textStyle="bold"
         android:textSize="15sp"
-        android:textColor="#FDD835"
+        android:textColor="@color/black"
         android:layout_marginBottom="70dp"
         android:clickable="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/tv_checkAccount" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
