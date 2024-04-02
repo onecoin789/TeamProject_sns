@@ -124,11 +124,11 @@
                     app:layout_constraintStart_toEndOf="@+id/img_My_Personal1"
                     app:layout_constraintTop_toBottomOf="@+id/text_My_Email_Personal1" />
 
-                <View
+                <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:layout_marginTop="20dp"
-                    android:background="#9F9F9F"
+                    android:background="@drawable/line_yellow"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -173,11 +173,11 @@
                     app:layout_constraintStart_toEndOf="@+id/img_My_Personal2"
                     app:layout_constraintTop_toBottomOf="@+id/text_My_Email_Personal2" />
 
-                <View
+                <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:layout_marginTop="20dp"
-                    android:background="#9F9F9F"
+                    android:background="@drawable/line_yellow"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -222,11 +222,11 @@
                     app:layout_constraintStart_toEndOf="@+id/img_My_Personal3"
                     app:layout_constraintTop_toBottomOf="@+id/text_My_Email_Personal3" />
 
-                <View
+                <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:layout_marginTop="20dp"
-                    android:background="#9F9F9F"
+                    android:background="@drawable/line_yellow"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -271,11 +271,11 @@
                     app:layout_constraintStart_toEndOf="@+id/img_My_Personal4"
                     app:layout_constraintTop_toBottomOf="@+id/text_My_Email_Personal4" />
 
-                <View
+                <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:layout_marginTop="20dp"
-                    android:background="#9F9F9F"
+                    android:background="@drawable/line_yellow"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -320,11 +320,11 @@
                     app:layout_constraintStart_toEndOf="@+id/img_My_Personal5"
                     app:layout_constraintTop_toBottomOf="@+id/text_My_Email_Personal5" />
 
-                <View
+                <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:layout_marginTop="20dp"
-                    android:background="#9F9F9F"
+                    android:background="@drawable/line_yellow"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
