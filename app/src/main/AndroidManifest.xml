@@ -13,10 +13,13 @@
         android:theme="@style/Theme.TeamProject_sns"
         tools:targetApi="31">
         <activity
-            android:name=".DetailActivity"
+            android:name=".StartActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MyPageActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,7 +27,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MyPageActivity" />
     </application>
 
 </manifest>
