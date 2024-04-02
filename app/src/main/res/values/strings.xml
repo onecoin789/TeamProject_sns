@@ -12,6 +12,6 @@
     <string name="toast_msg_idpqErr">email/비밀번호를 확인해주세요</string>
     <string name="signup_name">이름을 입력하세요.</string>
     -->
-    <string name = "main_content_title">title1</string>
-    <string name = "main_content_innercontent">content1</string>
+    <string name="main_content_title">title1</string>
+    <string name="main_content_innercontent">content1</string>
 </resources>
