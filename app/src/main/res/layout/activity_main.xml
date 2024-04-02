@@ -197,12 +197,12 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Title 1" />
+                    android:text="Title 3" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Content 1" />
+                    android:text="Content 3" />
 
             </LinearLayout>
         </LinearLayout>
