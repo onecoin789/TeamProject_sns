@@ -4,15 +4,17 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
 
-class MyPageActivity : AppCompatActivity() {
+
+class DetailActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_my_page)
+        setContentView(R.layout.activity_detail)
 
-        val btn_close = findViewById<ImageView>(R.id.img_My_Close);
-
-        btn_close.setOnClickListener{
+        val btn_close = findViewById<ImageView>(R.id.img_Detail_Close);
+        btn_close.setOnClickListener {
             finish()
         }
+
+
     }
 }
