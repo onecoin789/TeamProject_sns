@@ -7,7 +7,7 @@ import android.widget.TextView
 
 
 class DetailActivity : AppCompatActivity() {
-    lateinit var data: MyPageData
+    lateinit var data: UserInfo
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail)

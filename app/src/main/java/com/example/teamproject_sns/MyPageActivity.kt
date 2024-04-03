@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.teamproject_sns.Adapter.MyPageAdapter
 
 class MyPageActivity : AppCompatActivity() {
-    private var data: MyPageData = MyPageData()
+    private var data: UserInfo = UserInfo()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_my_page)
@@ -19,17 +19,16 @@ class MyPageActivity : AppCompatActivity() {
         }
         val rv_Page = findViewById<RecyclerView>(R.id.rv_Page)
 
-        val itemList = ArrayList<MyPageData>()
-        itemList.add(MyPageData("onecoin"))
-        itemList.add(MyPageData("onecoin"))
-        itemList.add(MyPageData("onecoin"))
+        val itemList = ArrayList<UserInfo>()
+        itemList.add(UserInfo("onecoin"))
+        itemList.add(UserInfo("onecoin"))
+        itemList.add(UserInfo("onecoin"))
 
 
         val pageAdapter = MyPageAdapter(itemList)
 
         rv_Page.adapter = pageAdapter
         rv_Page.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
-
 
     }
 }
