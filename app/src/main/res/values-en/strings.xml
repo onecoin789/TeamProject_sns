@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="app_name">TeamProject_sns</string>
     <string name="toast_email">Check your email</string>
     <string name="toast_pw">Check your password</string>
     <string name="signIn_id">Email</string>

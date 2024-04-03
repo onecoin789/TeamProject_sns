@@ -39,6 +39,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
+
     <Button
         android:id="@+id/btn_signUp"
         android:layout_width="wrap_content"
@@ -48,11 +49,9 @@
         android:backgroundTint="@null"
         android:text="@string/signIn_signup"
         android:textSize="18sp"
-        android:textAllCaps="false"
         app:layout_constraintBottom_toTopOf="@id/tv_login"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-
 
     <TextView
         android:id="@+id/tv_checkAccount"
