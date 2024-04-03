@@ -1,6 +1,7 @@
 package com.example.teamproject_sns
 
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -99,6 +100,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+
     private fun initView() {
         memberButton1 = findViewById(R.id.member1)
         memberButton1.setImageResource(R.drawable.ic_launcher_foreground)
@@ -108,29 +110,32 @@ class MainActivity : AppCompatActivity() {
 
         memberButton2 = findViewById(R.id.member2)
         memberButton2.setImageResource(R.drawable.ic_launcher_foreground)
-        memberButton2.setOnClickListener {
-            navigateToMyPageActivity()
-        }
+        // memberButton2 클릭 이벤트 제거
+        // memberButton2.setOnClickListener {
+        //     navigateToMyPageActivity()
+        // }
 
         memberButton3 = findViewById(R.id.member3)
         memberButton3.setImageResource(R.drawable.ic_launcher_foreground)
-        memberButton3.setOnClickListener {
-            navigateToMyPageActivity()
-        }
+        // memberButton3 클릭 이벤트 제거
+        // memberButton3.setOnClickListener {
+        //     navigateToMyPageActivity()
+        // }
 
         memberButton4 = findViewById(R.id.member4)
         memberButton4.setImageResource(R.drawable.ic_launcher_foreground)
-        memberButton4.setOnClickListener {
-            navigateToMyPageActivity()
-        }
+        // memberButton4 클릭 이벤트 제거
+        // memberButton4.setOnClickListener {
+        //     navigateToMyPageActivity()
+        // }
 
         memberButton5 = findViewById(R.id.member5)
         memberButton5.setImageResource(R.drawable.ic_launcher_foreground)
-        memberButton5.setOnClickListener {
-            navigateToMyPageActivity()
-        }
+        // memberButton5 클릭 이벤트 제거
+        // memberButton5.setOnClickListener {
+        //     navigateToMyPageActivity()
+        // }
     }
-
     private fun navigateToMyPageActivity() {
         val intent = Intent(this, MyPageActivity::class.java)
         startActivity(intent)
