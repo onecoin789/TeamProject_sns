@@ -86,11 +86,13 @@ class MainActivity : AppCompatActivity() {
                 val intent = Intent(baseContext,WebViewActivity::class.java)
                 intent.putExtra("url",writingsItems[position].url)
                 startActivity(intent)
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
             }
 
             override fun onTextClick(position: Int) {
                 val intent = Intent(baseContext,DetailActivity::class.java)
                 startActivity(intent)
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
             }
         })
 
@@ -139,5 +141,6 @@ class MainActivity : AppCompatActivity() {
     private fun navigateToMyPageActivity() {
         val intent = Intent(this, MyPageActivity::class.java)
         startActivity(intent)
+        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
     }
 }
