@@ -1,7 +1,7 @@
 <resources>
-    <string name="app_name">TeamProject_sns</string>
-    <string name="main_content_title">title1</string>
-    <string name="main_content_innercontent">content1</string>
+    <string name="app_name" translatable="false">TeamProject_sns</string>
+    <string name="main_content_title" translatable="false">title1</string>
+    <string name="main_content_innercontent" translatable="false">content1</string>
 
 <!--toast message-->
     <string name="toast_email">이메일을 확인하세요.</string>
