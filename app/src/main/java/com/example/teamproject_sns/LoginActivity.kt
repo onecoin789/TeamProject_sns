@@ -21,6 +21,7 @@ class LoginActivity : AppCompatActivity() {
 
         val emailValidation = "^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$"
 
+        //이메일 유효성 검사하는 함수
         fun checkEmail():Boolean{
             var email = etId.text.toString().trim() //공백제거
             val checkEmail = Pattern.matches(emailValidation, email)
@@ -32,14 +33,14 @@ class LoginActivity : AppCompatActivity() {
                 return false
             }
         }
+
+        //해당하는 아이디와 비밀번호 있는지 확인하는 함수
         fun checkPw() :Boolean{
             val pw = etPw.text.toString()
             if (!pw.isNullOrEmpty()){
                 return true
             } else return false
         }
-
-
 
         etId.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
@@ -70,7 +71,7 @@ class LoginActivity : AppCompatActivity() {
             } else {
                 Toast.makeText(this,resources.getString(R.string.toast_login), Toast.LENGTH_SHORT).show()
                 intent = Intent(this, MainActivity::class.java).apply {
-                    putExtra("id", etId.text.toString())
+                    putExtra("id", etId.text.toString()) //data class 생성후에 수정하겠습니다.
                     putExtra("pw", etPw.text.toString())
                 }
                 startActivity(intent)
