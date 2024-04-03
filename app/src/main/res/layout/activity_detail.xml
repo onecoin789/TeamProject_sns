@@ -7,8 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".DetailActivity">
 
-<<<<<<< HEAD
-=======
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layout_Detail_Top"
         android:layout_width="match_parent"
@@ -105,6 +104,6 @@
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
->>>>>>> b805797b22cdef9c918df1ef2a41794149cf5091
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
