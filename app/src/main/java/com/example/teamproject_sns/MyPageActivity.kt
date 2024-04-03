@@ -9,9 +9,9 @@ class MyPageActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_my_page)
 
-        val close = findViewById<ImageView>(R.id.img_Close_Btn)
+        val btn_close = findViewById<ImageView>(R.id.img_My_Close);
 
-        close.setOnClickListener{
+        btn_close.setOnClickListener{
             finish()
         }
     }

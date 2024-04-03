@@ -20,6 +20,9 @@
             android:name=".WebViewActivity"
             android:exported="false" />
         <activity
+            android:name=".JoinActivity"
+            android:exported="false" />
+        <activity
             android:name=".StartActivity"
             android:exported="true">
             <intent-filter>
@@ -28,6 +31,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".DetailActivity"
+            android:exported="false" />
         <activity
             android:name=".LoginActivity"
             android:exported="false" />

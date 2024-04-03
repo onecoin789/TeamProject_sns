@@ -20,6 +20,7 @@ class LoginActivity : AppCompatActivity() {
         val pw = etPw.text.toString()
         val btnLogin = findViewById<Button>(R.id.btn_login)
 
+
         etId.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
             } //id 변경전
