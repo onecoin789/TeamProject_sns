@@ -1,9 +1,10 @@
 package com.example.teamproject_sns.Model
 
-import com.example.teamproject_sns.Info
+
 
 object MemberManager {
-    val memberList = mutableListOf<Info>()
+    private val memberList = mutableListOf<Info>()
+
 
     fun addMember(info:Info){
         memberList.add(info)
