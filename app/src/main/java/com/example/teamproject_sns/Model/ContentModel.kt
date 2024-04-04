@@ -5,3 +5,6 @@ data class ContentModel(
     val imgUrl:String="",
     val titleUrl:String=""
 )
+data class Info( val name : String,
+                 val email : String,
+                 val password : String)
