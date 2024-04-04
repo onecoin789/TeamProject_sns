@@ -5,8 +5,12 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
+import androidx.activity.result.ActivityResultLauncher
 
 class StartActivity : AppCompatActivity() {
+
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_start)
@@ -17,6 +21,7 @@ class StartActivity : AppCompatActivity() {
 
        btnJoin.setOnClickListener {
            val intent = Intent(this, JoinActivity::class.java)
+
            startActivity(intent)
        }
 

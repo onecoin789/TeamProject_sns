@@ -20,7 +20,7 @@
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView11" />
+        app:layout_constraintTop_toBottomOf="@+id/profileImg" />
 
     <EditText
         android:id="@+id/et_id2"
@@ -108,15 +108,51 @@
         app:srcCompat="@drawable/invertedtriangle"
         app:tint="#FDD101" />
 
+
     <ImageView
-        android:id="@+id/imageView11"
-        android:layout_width="75dp"
-        android:layout_height="100dp"
+        android:id="@+id/profileImg"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:layout_marginTop="80dp"
+        android:background="@drawable/circular_background"
+        android:clipToOutline="true"
+        android:scaleType="fitXY"
         app:layout_constraintEnd_toEndOf="@+id/imageView9"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="@+id/imageView9"
         app:layout_constraintTop_toTopOf="@+id/imageView9"
         app:srcCompat="@drawable/add2" />
+
+    <TextView
+        android:id="@+id/Buttontextcamera"
+        android:layout_width="50dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginRight="10dp"
+        android:backgroundTint="@color/yellow"
+        android:text="카메라"
+        android:textColor="@color/black"
+        android:textSize="10sp"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintRight_toLeftOf="@+id/galleryBtn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profileImg" />
+
+    <TextView
+        android:id="@+id/galleryBtn"
+        android:layout_width="50dp"
+        android:layout_height="42dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginEnd="115dp"
+        android:backgroundTint="@color/yellow"
+        android:text="갤러리"
+        android:textColor="@color/black"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="@+id/Buttontextcamera"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/Buttontextcamera"
+        app:layout_constraintTop_toTopOf="@+id/Buttontextcamera" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
