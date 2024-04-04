@@ -2,8 +2,6 @@ package com.example.teamproject_sns
 
 import android.graphics.Color
 import android.widget.EditText
-import android.widget.Toast
-import androidx.core.app.NotificationCompat.getColor
 import java.util.regex.Pattern
 
 interface checkValidation {
