@@ -1,12 +1,6 @@
 package com.example.teamproject_sns
 
-//import androidx.appcompat.app.AppCompatActivity
-//import android.os.Bundle
-//import android.widget.Button
-//import android.widget.EditText
-//import android.widget.ImageView
-//import android.widget.Toast
-//import java.io.Serializable
+
 import android.Manifest
 import android.annotation.SuppressLint
 import android.content.ContentValues
@@ -30,7 +24,9 @@ import com.example.teamproject_sns.Model.Info
 import java.io.IOException
 import java.text.SimpleDateFormat
 
-class JoinActivity : AppCompatActivity() {
+
+
+class JoinActivity :checkValidation, AppCompatActivity() {
 
     val PERM_STORAGE = 9
     val PERM_CAMERA = 10
@@ -38,15 +34,14 @@ class JoinActivity : AppCompatActivity() {
     val REQ_GALLERY = 12
 
     //camera 버튼
-    private lateinit var Buttontextcamera: TextView
-
+    private lateinit var Buttontextcamera:TextView
     //갤러리 버튼
-    private lateinit var galleryBtn: TextView
+    private lateinit var galleryBtn:TextView
 
-    private lateinit var profileImg: ImageView
-
+    private lateinit var profileImg:ImageView
     //선택된 이미지의 주소를 저장할 변수
     private var realUri: Uri? = null
+
 
 
     @SuppressLint("MissingInflatedId")
@@ -66,6 +61,7 @@ class JoinActivity : AppCompatActivity() {
 
 
         val Inputname = findViewById<EditText>(R.id.et_naming)
+        val Inputtext = Inputname.text
         val Inputemail = findViewById<EditText>(R.id.et_id2)
         val Inputpassword = findViewById<EditText>(R.id.et_password2)
         val Inputconfirmpw = findViewById<EditText>(R.id.confirmpw)
@@ -75,46 +71,70 @@ class JoinActivity : AppCompatActivity() {
         var password = Inputpassword.text//.toString()
         var confirmpw = Inputconfirmpw.text//.toString()
 
-        fun checkValidation(): Int {
-            val emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+"
-            if (name.isNullOrEmpty() || email.isNullOrEmpty() || password.isNullOrEmpty() || confirmpw.isNullOrEmpty()) {
-                Toast.makeText(this@JoinActivity, "입력되지 않은 정보가 있습니다.", Toast.LENGTH_SHORT).show()
-                return 0
-            }
-
-            if (!email.toString().matches(emailPattern.toRegex())) {
-                Toast.makeText(this@JoinActivity, "유효한 이메일을 입력하세요", Toast.LENGTH_SHORT).show()
-                return 0
-            }
-            if (password.length < 8 || !password.contains(Regex("[A-Z]"))
-                || !password.contains(Regex("[^A-Za-z0-9]"))
-            ) {
-                Toast.makeText(this, "비밀번호가 강도가 낮습니다. 다시 입력해주세요.", Toast.LENGTH_SHORT).show()
-                return 0
-            }
-            if (password.toString() != confirmpw.toString()) {
-                Toast.makeText(this@JoinActivity, "비밀번호를 다시 확인해주세요", Toast.LENGTH_SHORT).show()
-                return 0
-            }
-            return 1
-        }
 
         btn_sign.setOnClickListener {
-            if (checkValidation() == 1) {
-                val userInfo = Info(name.toString(), email.toString(), password.toString())
-                val intent = Intent(this, LoginActivity::class.java)
+            var checkOption = checkValidation(name.toString(),email.toString(),password.toString())
+            when(checkOption){
+                1 -> {
+                    if (password.toString() == confirmpw.toString()) {
+                        val userInfo = Info(name.toString(), email.toString(), password.toString())
+                        val intent = Intent(this, LoginActivity::class.java)
 
-                intent.putExtra("name", userInfo.name)
-                intent.putExtra("email", userInfo.email)
-                intent.putExtra("password", userInfo.password)
-                setResult(RESULT_OK, intent)
-                finish()
+                        intent.putExtra("name", userInfo.name)
+                        intent.putExtra("email", userInfo.email)
+                        intent.putExtra("password", userInfo.password)
+                        setResult(RESULT_OK, intent)
+                        finish()
+                    }
+                        else
+                            Toast.makeText(this@JoinActivity, "비밀번호를 다시 확인해주세요", Toast.LENGTH_SHORT).show()
+                }
+
+
+                2 -> Toast.makeText(this@JoinActivity, "입력되지 않은 정보가 있습니다.", Toast.LENGTH_SHORT).show()
+                3 -> Toast.makeText(this@JoinActivity, "유효한 이메일을 입력하세요", Toast.LENGTH_SHORT).show()
+                4 ->  Toast.makeText(this, "비밀번호가 강도가 낮습니다. 다시 입력해주세요.", Toast.LENGTH_SHORT).show()
             }
+
         }
+
+//        fun checkValidation(): Int {
+//            val emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+"
+//            if (name.isNullOrEmpty() || email.isNullOrEmpty() || password.isNullOrEmpty() || confirmpw.isNullOrEmpty()) {
+//                Toast.makeText(this@JoinActivity, "입력되지 않은 정보가 있습니다.", Toast.LENGTH_SHORT).show()
+//                return 0
+//            }
+//
+//            if (!email.toString().matches(emailPattern.toRegex())) {
+//                Toast.makeText(this@JoinActivity, "유효한 이메일을 입력하세요", Toast.LENGTH_SHORT).show()
+//                return 0
+//            }
+//            if (password.length < 8 || !password.contains(Regex("[A-Z]"))
+//                || !password.contains(Regex("[^A-Za-z0-9]"))
+//            ) {
+//                Toast.makeText(this, "비밀번호가 강도가 낮습니다. 다시 입력해주세요.", Toast.LENGTH_SHORT).show()
+//                return 0
+//            }
+//            if (password.toString() != confirmpw.toString()) {
+//                Toast.makeText(this@JoinActivity, "비밀번호를 다시 확인해주세요", Toast.LENGTH_SHORT).show()
+//                return 0
+//            }
+//            return 1
+//        }
+//
+//        btn_sign.setOnClickListener {
+//            if (checkValidation() == 1) {
+//                val userInfo = Info(name.toString(), email.toString(), password.toString())
+//                val intent = Intent(this, LoginActivity::class.java)
+//
+//                intent.putExtra("name", userInfo.name)
+//                intent.putExtra("email", userInfo.email)
+//                intent.putExtra("password", userInfo.password)
+//                setResult(RESULT_OK, intent)
+//                finish()
+//            }
+//        }
     }
-
-
-
 
 
     fun initViews(){
@@ -134,12 +154,12 @@ class JoinActivity : AppCompatActivity() {
     @SuppressLint("SuspiciousIndentation")
     fun openCamera(){
         val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-        createImageUri(newfileName(),"image/jpg")?.let {
-                uri->
-            realUri = uri
-            intent.putExtra(MediaStore.EXTRA_OUTPUT,realUri)
-            startActivityForResult(intent,REQ_CAMERA)
-        }
+            createImageUri(newfileName(),"image/jpg")?.let {
+                    uri->
+                realUri = uri
+                intent.putExtra(MediaStore.EXTRA_OUTPUT,realUri)
+                startActivityForResult(intent,REQ_CAMERA)
+            }
         startActivityForResult(intent,REQ_CAMERA)
 
 
@@ -171,7 +191,7 @@ class JoinActivity : AppCompatActivity() {
     //원본 이미지를 불러오는 메서드
     @RequiresApi(Build.VERSION_CODES.P)
     fun loadBitmap(photoUri: Uri): Bitmap?{
-        // var image:Bitmap? = null
+      // var image:Bitmap? = null
         try {
             return if(Build.VERSION.SDK_INT > Build.VERSION_CODES.M){
                 val source = ImageDecoder.createSource(contentResolver,photoUri)
@@ -260,65 +280,3 @@ class JoinActivity : AppCompatActivity() {
     }
 }
 
-//class JoinActivity : AppCompatActivity() {
-//    override fun onCreate(savedInstanceState: Bundle?) {
-//        super.onCreate(savedInstanceState)
-//        setContentView(R.layout.activity_sign_up)
-//
-//
-//        val Inputname = findViewById<EditText>(R.id.et_naming)
-//        val Inputemail = findViewById<EditText>(R.id.et_id2)
-//        val Inputpassword = findViewById<EditText>(R.id.et_password2)
-//        val Inputconfirmpw = findViewById<EditText>(R.id.confirmpw)
-//        val btn_sign = findViewById<Button>(R.id.btn_signup2)
-//        var name = Inputname.text//.toString()
-//        var email = Inputemail.text//.toString().trim()
-//        var password = Inputpassword.text//.toString()
-//        var confirmpw = Inputconfirmpw.text//.toString()
-//
-//        fun checkValidation(): Int {
-//            val emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+"
-//            if (name.isNullOrEmpty() || email.isNullOrEmpty() || password.isNullOrEmpty() || confirmpw.isNullOrEmpty()) {
-//                Toast.makeText(this@JoinActivity, "입력되지 않은 정보가 있습니다.", Toast.LENGTH_SHORT).show()
-//                return 0
-//            }
-//
-//            if (!email.toString().matches(emailPattern.toRegex())) {
-//                Toast.makeText(this@JoinActivity, "유효한 이메일을 입력하세요", Toast.LENGTH_SHORT).show()
-//                return 0
-//            }
-//            if (password.length < 8 || !password.contains(Regex("[A-Z]"))
-//                || !password.contains(Regex("[^A-Za-z0-9]"))) {
-//                Toast.makeText(this, "비밀번호가 강도가 낮습니다. 다시 입력해주세요.", Toast.LENGTH_SHORT).show()
-//                return 0
-//            }
-//            if (password.toString() != confirmpw.toString()) {
-//                Toast.makeText(this@JoinActivity, "비밀번호를 다시 확인해주세요", Toast.LENGTH_SHORT).show()
-//                return 0
-//            }
-//            return 1
-//        }
-//
-//        btn_sign.setOnClickListener {
-//            if (checkValidation() == 1){
-//                val userInfo  = Info(name.toString(), email.toString(), password.toString())
-//                intent.putExtra("UserInfo", userInfo )
-//            // 정보 받는방법  val user = intent.getSerializableExtra("object") as User?
-//                finish()
-//            }
-//        }
-////
-////                   //intent.putExtra("id_back", id2.text.toString())                    // registerforActivity에서 정보intent
-////                    //intent.putExtra("password_back", password2.text.toString())        //
-//////                    setResult(
-//////                        RESULT_OK,
-//////                        intent
-////                    // RESULT_OK 전달하여 ActivityResult 수신 구문 실행
-////
-////                    finish()
-////                }
-////
-////    }
-//
-//    }
-//}
