@@ -10,8 +10,8 @@
         android:id="@+id/et_naming"
         android:layout_width="250dp"
         android:layout_height="50dp"
-        android:layout_marginTop="30dp"
-        android:background="@drawable/border1"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/border2"
         android:ems="10"
         android:gravity="center"
         android:hint="이름"
@@ -42,7 +42,7 @@
         android:layout_width="250dp"
         android:layout_height="50dp"
         android:layout_marginTop="20dp"
-        android:background="@drawable/border1"
+        android:background="@drawable/border2"
         android:ems="10"
         android:gravity="center"
         android:hint="비밀번호(Password)"
@@ -58,7 +58,7 @@
         android:layout_height="50dp"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="55dp"
-        android:background="@drawable/border1"
+        android:background="@drawable/border2"
         android:text="회원가입 완료"
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="@+id/imageView10"
@@ -106,7 +106,7 @@
         app:layout_constraintTop_toBottomOf="@+id/confirmpw"
         app:layout_constraintVertical_bias="0.043"
         app:srcCompat="@drawable/invertedtriangle"
-        app:tint="#FDD101" />
+        app:tint="#BD9E0E" />
 
 
     <ImageView

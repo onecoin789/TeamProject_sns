@@ -24,6 +24,8 @@ import com.example.teamproject_sns.Model.Info
 import java.io.IOException
 import java.text.SimpleDateFormat
 
+import android.text.TextWatcher
+import android.text.Editable
 
 
 class JoinActivity :checkValidation, AppCompatActivity() {
@@ -60,82 +62,66 @@ class JoinActivity :checkValidation, AppCompatActivity() {
         requirePermissions(arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE), PERM_STORAGE)
 
 
-        val Inputname = findViewById<EditText>(R.id.et_naming)
-        val Inputtext = Inputname.text
-        val Inputemail = findViewById<EditText>(R.id.et_id2)
-        val Inputpassword = findViewById<EditText>(R.id.et_password2)
-        val Inputconfirmpw = findViewById<EditText>(R.id.confirmpw)
+        val name = findViewById<EditText>(R.id.et_naming)
+
+        val email = findViewById<EditText>(R.id.et_id2)
+        val password = findViewById<EditText>(R.id.et_password2)
+        val confirmpw = findViewById<EditText>(R.id.confirmpw)
         val btn_sign = findViewById<Button>(R.id.btn_signup2)
-        var name = Inputname.text//.toString()
-        var email = Inputemail.text//.toString().trim()
-        var password = Inputpassword.text//.toString()
-        var confirmpw = Inputconfirmpw.text//.toString()
+
+        email.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+            } //id 변경전
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+            } //id 변경중
+            override fun afterTextChanged(s: Editable?) {
+                checkEmail(email)
+            } //id 변경후
+        })
+
+        password.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+            } //id 변경전
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+            } //id 변경중
+            override fun afterTextChanged(s: Editable?) {
+                checkPw(password)
+            } //id 변경후
+        })
+
+        confirmpw.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+            } //id 변경전
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+            } //id 변경중
+            override fun afterTextChanged(s: Editable?) {
+                checkPw(confirmpw)
+            } //id 변경후
+        })
 
 
         btn_sign.setOnClickListener {
-            var checkOption = checkValidation(name.toString(),email.toString(),password.toString())
-            when(checkOption){
-                1 -> {
-                    if (password.toString() == confirmpw.toString()) {
-                        val userInfo = Info(name.toString(), email.toString(), password.toString())
-                        val intent = Intent(this, LoginActivity::class.java)
-
-                        intent.putExtra("name", userInfo.name)
-                        intent.putExtra("email", userInfo.email)
-                        intent.putExtra("password", userInfo.password)
-                        setResult(RESULT_OK, intent)
-                        finish()
-                    }
-                        else
-                            Toast.makeText(this@JoinActivity, "비밀번호를 다시 확인해주세요", Toast.LENGTH_SHORT).show()
-                }
-
-
-                2 -> Toast.makeText(this@JoinActivity, "입력되지 않은 정보가 있습니다.", Toast.LENGTH_SHORT).show()
-                3 -> Toast.makeText(this@JoinActivity, "유효한 이메일을 입력하세요", Toast.LENGTH_SHORT).show()
-                4 ->  Toast.makeText(this, "비밀번호가 강도가 낮습니다. 다시 입력해주세요.", Toast.LENGTH_SHORT).show()
-            }
-
-        }
-
-        fun checkValidation(): Int {
-            val emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+"
-            if (name.isNullOrEmpty() || email.isNullOrEmpty() || password.isNullOrEmpty() || confirmpw.isNullOrEmpty()) {
+            if (nullCheck(name.toString()) || nullCheck(password.toString()) || nullCheck(confirmpw.toString()) || nullCheck(email.toString()))
                 Toast.makeText(this@JoinActivity, "입력되지 않은 정보가 있습니다.", Toast.LENGTH_SHORT).show()
-                return 0
-            }
-
-            if (!email.toString().matches(emailPattern.toRegex())) {
+            else if (!checkEmail(email))
                 Toast.makeText(this@JoinActivity, "유효한 이메일을 입력하세요", Toast.LENGTH_SHORT).show()
-                return 0
-            }
-            if (password.length < 8 || !password.contains(Regex("[A-Z]"))
-                || !password.contains(Regex("[^A-Za-z0-9]"))
-            ) {
+            else if(!checkPw(password))
                 Toast.makeText(this, "비밀번호가 강도가 낮습니다. 다시 입력해주세요.", Toast.LENGTH_SHORT).show()
-                return 0
-            }
-            if (password.toString() != confirmpw.toString()) {
+            else if(!checkConfirmPw(password,confirmpw))
                 Toast.makeText(this@JoinActivity, "비밀번호를 다시 확인해주세요", Toast.LENGTH_SHORT).show()
-                return 0
-            }
-            return 1
-        }
-
-        btn_sign.setOnClickListener {
-            if (checkValidation() == 1) {
-                val userInfo = Info(name.toString(), email.toString(), password.toString())
+            else {
                 val intent = Intent(this, LoginActivity::class.java)
-
-                intent.putExtra("name", userInfo.name)
-                intent.putExtra("email", userInfo.email)
+                val userInfo = Info(name.text.toString(), email.text.toString(), password.text.toString())
+                intent.putExtra("name",userInfo.name)
+                intent.putExtra("email",userInfo.email)
                 intent.putExtra("password", userInfo.password)
                 setResult(RESULT_OK, intent)
                 finish()
             }
         }
-    }
 
+
+    }
 
     fun initViews(){
         //카메라 요청시 권한 체크 후 승인되면 카메라 열기
@@ -154,12 +140,12 @@ class JoinActivity :checkValidation, AppCompatActivity() {
     @SuppressLint("SuspiciousIndentation")
     fun openCamera(){
         val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-            createImageUri(newfileName(),"image/jpg")?.let {
-                    uri->
-                realUri = uri
-                intent.putExtra(MediaStore.EXTRA_OUTPUT,realUri)
-                startActivityForResult(intent,REQ_CAMERA)
-            }
+        createImageUri(newfileName(),"image/jpg")?.let {
+                uri->
+            realUri = uri
+            intent.putExtra(MediaStore.EXTRA_OUTPUT,realUri)
+            startActivityForResult(intent,REQ_CAMERA)
+        }
         startActivityForResult(intent,REQ_CAMERA)
 
 
@@ -191,7 +177,7 @@ class JoinActivity :checkValidation, AppCompatActivity() {
     //원본 이미지를 불러오는 메서드
     @RequiresApi(Build.VERSION_CODES.P)
     fun loadBitmap(photoUri: Uri): Bitmap?{
-      // var image:Bitmap? = null
+        // var image:Bitmap? = null
         try {
             return if(Build.VERSION.SDK_INT > Build.VERSION_CODES.M){
                 val source = ImageDecoder.createSource(contentResolver,photoUri)
@@ -279,4 +265,3 @@ class JoinActivity :checkValidation, AppCompatActivity() {
         }
     }
 }
-
