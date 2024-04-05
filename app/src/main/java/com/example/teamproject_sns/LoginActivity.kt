@@ -70,7 +70,7 @@ class LoginActivity : AppCompatActivity(), checkValidation {
             val id = etId.text.toString().trim()
             val pw = etPw.text.toString().trim()
 
-            if (!nullCheck(name) || !nullCheck(id) || !nullCheck(pw)){
+            if (nullCheck(id) || nullCheck(pw)){
                 Toast.makeText(this@LoginActivity, "입력되지 않은 정보가 있습니다.", Toast.LENGTH_SHORT).show()
             } else{
                 if (!checkEmail(etId)){
