@@ -27,8 +27,8 @@
 
         <ImageView
             android:id="@+id/img_My_Main"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
             android:layout_marginTop="80dp"
             android:src="@drawable/radius"
             app:layout_constraintEnd_toEndOf="parent"
@@ -59,6 +59,7 @@
             app:layout_constraintTop_toBottomOf="@+id/text_My_Name" />
 
         <TextView
+            android:id="@+id/text_My_Text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -81,7 +82,7 @@
                 android:id="@+id/rv_Page"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                tools:listitem="@layout/my_page_item" />
+                tools:listitem="@layout/rv_mypage_item" />
 
 
         </LinearLayout>

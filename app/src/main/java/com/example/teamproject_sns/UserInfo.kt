@@ -7,4 +7,4 @@ data class UserInfo(
     val mail: String = "",
     val password: String = "",
     val name: String = ""
-) : Serializable
+)
