@@ -122,9 +122,4 @@ class LoginActivity : AppCompatActivity(), checkValidation {
                 }
             }
     }
-
-    fun checkSame(id: String, pw: String, name:String) {
-        var findUser: Info = userInfo
-        if (id
-    }
 }
