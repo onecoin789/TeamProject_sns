@@ -68,10 +68,6 @@ class JoinActivity :checkValidation, AppCompatActivity() {
         val password = findViewById<EditText>(R.id.et_password2)
         val confirmpw = findViewById<EditText>(R.id.confirmpw)
         val btn_sign = findViewById<Button>(R.id.btn_signup2)
-//        var name = Inputname.text//.toString()
-//        var email = Inputemail.text//.toString().trim()
-//        var password = Inputpassword.text//.toString()
-//        var confirmpw = Inputconfirmpw.text//.toString()
 
         email.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
@@ -123,69 +119,9 @@ class JoinActivity :checkValidation, AppCompatActivity() {
                 finish()
             }
         }
-//            var checkOption = checkValidation(name.toString(),email.toString(),password.toString())
-//            when(checkOption){
-//                1 -> {
-//                    if (password.toString() == confirmpw.toString()) {
-//                        val userInfo = Info(name.toString(), email.toString(), password.toString())
-//                        val intent = Intent(this, LoginActivity::class.java)
-//
-//                        intent.putExtra("name", userInfo.name)
-//                        intent.putExtra("email", userInfo.email)
-//                        intent.putExtra("password", userInfo.password)
-//                        setResult(RESULT_OK, intent)
-//                        finish()
-//                    }
-//                        else
-//                            Toast.makeText(this@JoinActivity, "비밀번호를 다시 확인해주세요", Toast.LENGTH_SHORT).show()
-//                }
-//
-//
-//                2 -> Toast.makeText(this@JoinActivity, "입력되지 않은 정보가 있습니다.", Toast.LENGTH_SHORT).show()
-//                3 -> Toast.makeText(this@JoinActivity, "유효한 이메일을 입력하세요", Toast.LENGTH_SHORT).show()
-//                4 ->  Toast.makeText(this, "비밀번호가 강도가 낮습니다. 다시 입력해주세요.", Toast.LENGTH_SHORT).show()
-//            }
+
 
     }
-
-//        fun checkValidation(): Int {
-//            val emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+"
-//            if (name.isNullOrEmpty() || email.isNullOrEmpty() || password.isNullOrEmpty() || confirmpw.isNullOrEmpty()) {
-//                Toast.makeText(this@JoinActivity, "입력되지 않은 정보가 있습니다.", Toast.LENGTH_SHORT).show()
-//                return 0
-//            }
-//
-//            if (!email.toString().matches(emailPattern.toRegex())) {
-//                Toast.makeText(this@JoinActivity, "유효한 이메일을 입력하세요", Toast.LENGTH_SHORT).show()
-//                return 0
-//            }
-//            if (password.length < 8 || !password.contains(Regex("[A-Z]"))
-//                || !password.contains(Regex("[^A-Za-z0-9]"))
-//            ) {
-//                Toast.makeText(this, "비밀번호가 강도가 낮습니다. 다시 입력해주세요.", Toast.LENGTH_SHORT).show()
-//                return 0
-//            }
-//            if (password.toString() != confirmpw.toString()) {
-//                Toast.makeText(this@JoinActivity, "비밀번호를 다시 확인해주세요", Toast.LENGTH_SHORT).show()
-//                return 0
-//            }
-//            return 1
-//        }
-//
-//        btn_sign.setOnClickListener {
-//            if (checkValidation() == 1) {
-//                val userInfo = Info(name.toString(), email.toString(), password.toString())
-//                val intent = Intent(this, LoginActivity::class.java)
-//
-//                intent.putExtra("name", userInfo.name)
-//                intent.putExtra("email", userInfo.email)
-//                intent.putExtra("password", userInfo.password)
-//                setResult(RESULT_OK, intent)
-//                finish()
-//            }
-//        }
-
-
 
     fun initViews(){
         //카메라 요청시 권한 체크 후 승인되면 카메라 열기
