@@ -3,16 +3,22 @@ package com.example.teamproject_sns
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Intent
+
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
+
 import android.widget.TextView
 import android.widget.Toast
+
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
+
 
 class LoginActivity : AppCompatActivity(), checkValidation {
     private lateinit var et_name: TextView
@@ -26,7 +32,7 @@ class LoginActivity : AppCompatActivity(), checkValidation {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        //name => 로그인단에서는 보여지지 않게끔 ui조정
+        //name =>로그인단에서는 보여지지 않게끔 ui조정
         et_name = findViewById(R.id.et_name)
 
         //email
@@ -64,17 +70,17 @@ class LoginActivity : AppCompatActivity(), checkValidation {
             val id = etId.text.toString().trim()
             val pw = etPw.text.toString().trim()
 
-            if (!checkNull(name) || !checkNull(id) || !checkNull(pw)){
-                Toast.makeText(this@LoginActivity, resources.getString(R.string.toast_check), Toast.LENGTH_SHORT).show()
+            if (nullCheck(id) || nullCheck(pw)){
+                Toast.makeText(this@LoginActivity, "입력되지 않은 정보가 있습니다.", Toast.LENGTH_SHORT).show()
             } else{
                 if (!checkEmail(etId)){
-                    Toast.makeText(this@LoginActivity, resources.getString(R.string.toast_email), Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@LoginActivity,"이메일을 다시 확인해주세요", Toast.LENGTH_SHORT).show()
                 }
                 if (!checkPw(etPw)){
-                    Toast.makeText(this@LoginActivity, resources.getString(R.string.toast_pw), Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@LoginActivity, "비밀번호를 다시 확인해주세요", Toast.LENGTH_SHORT).show()
                 }
                 if (checkEmail(etId) && checkPw(etPw)){
-                    Toast.makeText(this@LoginActivity, resources.getString(R.string.toast_login), Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@LoginActivity,"로그인 되었습니다", Toast.LENGTH_SHORT).show()
                     val intent = Intent(this@LoginActivity, MainActivity::class.java)
 
                     //name은 회원가입버튼 누를때 넘어옴
@@ -90,7 +96,7 @@ class LoginActivity : AppCompatActivity(), checkValidation {
         //회원가입 결과처리 설정
         setResultFromSignUp()
 
-        val signup = findViewById<Button>(R.id.btn_signup)
+        val signup = findViewById<Button>(R.id.signup)
         signup.setOnClickListener {
             //회원가입 화면 이동
             var intent = Intent(this,JoinActivity::class.java)
@@ -112,7 +118,6 @@ class LoginActivity : AppCompatActivity(), checkValidation {
                         et_name.text = name
                         etId.setText(email)
                         etPw.setText(password)
-
                     }
                 }
             }
