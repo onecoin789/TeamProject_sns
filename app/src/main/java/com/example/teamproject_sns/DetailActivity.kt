@@ -34,6 +34,7 @@ class DetailActivity : AppCompatActivity() {
         val btn_close = findViewById<ImageView>(R.id.img_Detail_Close);
         btn_close.setOnClickListener {
             finish()
+            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
 
 
 

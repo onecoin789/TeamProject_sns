@@ -9,7 +9,6 @@ import android.os.Bundle
 
 import android.text.Editable
 import android.text.TextWatcher
-import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 
@@ -96,10 +95,10 @@ class LoginActivity : AppCompatActivity(), checkValidation {
         //회원가입 결과처리 설정
         setResultFromSignUp()
 
-        val signup = findViewById<Button>(R.id.signup)
+        val signup = findViewById<TextView>(R.id.signup)
         signup.setOnClickListener {
             //회원가입 화면 이동
-            var intent = Intent(this,JoinActivity::class.java)
+            val intent = Intent(this,JoinActivity::class.java)
             resultLauncher.launch(intent)
         }
     }

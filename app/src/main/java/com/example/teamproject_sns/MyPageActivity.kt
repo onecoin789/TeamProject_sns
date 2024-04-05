@@ -39,10 +39,6 @@ class MyPageActivity : AppCompatActivity() {
         emailMy.text = emailGet
 
 
-
-
-
-
         //Main에서 받아온 데이터 그대로 넣기
         image = arrayOf(
             imageGet,
@@ -73,7 +69,8 @@ class MyPageActivity : AppCompatActivity() {
 
 
         newRecyclerView = findViewById(R.id.rv_Page)
-        newRecyclerView.layoutManager = LinearLayoutManager(this@MyPageActivity, LinearLayoutManager.VERTICAL, false)
+        newRecyclerView.layoutManager =
+            LinearLayoutManager(this@MyPageActivity, LinearLayoutManager.VERTICAL, false)
         newRecyclerView.setHasFixedSize(true)
 
         newArrayList = arrayListOf<MainInfo>()
@@ -83,9 +80,10 @@ class MyPageActivity : AppCompatActivity() {
         val btn_close = findViewById<ImageView>(R.id.img_My_Close);
         btn_close.setOnClickListener {
             finish()
+            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
+
         }
     }
-
     private fun getUserData() {
 
         for (i in image.indices) {
@@ -106,6 +104,7 @@ class MyPageActivity : AppCompatActivity() {
                     intent.putExtra("name",newArrayList[position].name)
                     intent.putExtra("til",newArrayList[position].til)
                     startActivity(intent)
+                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
                 }
             })
         }
