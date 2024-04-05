@@ -9,7 +9,7 @@
     <solid android:color="@null"/>
 
     <stroke
-        android:color="@color/gray"
+        android:color="#ACACAC"
         android:width="1dp"/>
 
     <padding android:left="10dp"/>

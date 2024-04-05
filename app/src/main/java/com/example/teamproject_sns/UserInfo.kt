@@ -4,4 +4,4 @@ import java.io.Serializable
 
 data class Info( val name : String,
                  val email : String,
-                 val password : String) : Serializable
+                 val password : String)

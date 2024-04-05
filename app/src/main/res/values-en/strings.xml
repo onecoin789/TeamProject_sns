@@ -1,15 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">TeamProject_sns</string>
-    <string name="toast_email">Check your email</string>
-    <string name="toast_pw">Check your password</string>
-    <string name="signIn_id">Email</string>
-    <string name="signIn_pw">Password</string>
-    <string name="signIn_login">Login</string>
-    <string name="signIn_signup">Sign up</string>
-    <string name="main_check">Do you already have an account?</string>
+    <!--toast message-->
+    <string name="toast_pw">Enter your password</string>
+    <string name="toast_email">Check your email address.</string>
+    <string name="toast_check">Please confirm the entered content</string>
     <string name="toast_noInput">Some information is missing.</string>
     <string name="toast_login">Login successful.</string>
     <string name="check_email">Check for the availability of the email</string>
     <string name="exist_email">This email is already in use</string>
+
+    <!--layout-->
+    <string name="main_check">Do you already have an account?</string>
+
+    <!--login-->
+    <string name="signIn_id">Email</string>
+    <string name="signIn_pw">Password</string>
+    <string name="signIn_login">Login</string>
+    <string name="signIn_signup">Sign up</string>
+
+
+
 </resources>
