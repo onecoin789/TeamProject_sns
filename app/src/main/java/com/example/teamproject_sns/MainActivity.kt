@@ -18,7 +18,7 @@ import kotlin.random.Random
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var memberButton1: ImageButton
+    private lateinit var memberButton1: ImageView
     private lateinit var memberButton2: ImageButton
     private lateinit var memberButton3: ImageButton
     private lateinit var memberButton4: ImageButton
@@ -63,42 +63,42 @@ class MainActivity : AppCompatActivity() {
             ContentModel(
                 "https://crablo12.tistory.com/110",
                 "https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FnJyhS%2FbtsF9fbq7VG%2FndTfxPMXYfK2RXTZdRKk5k%2Fimg.png",
-                "title0"
+                "은별's blog"
             )
         )
         writingsItems.add(
             ContentModel(
                 "https://jihyung1997.tistory.com/",
                 "https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FGYdoD%2FbtsGbRVqogP%2FPKIZe4Yvi5jK44inVOZeWk%2Fimg.png",
-                "title1"
+                "지형's blog"
             )
         )
         writingsItems.add(
             ContentModel(
                 "https://velog.io/@bettor/posts",
                 "https://velog.velcdn.com/images/bettor/post/a851ddc6-4dd6-49c8-b5d0-5f3dfb7308fe/image.png",
-                "title2"
+                "찬교's blog"
             )
         )
         writingsItems.add(
             ContentModel(
                 "https://velog.io/@godls20455/posts",
                 "https://velog.velcdn.com/images/godls20455/post/bbefe551-9539-4061-b0c5-3f5fc7cdff7e/image.png",
-                "title3"
+                "해인's blog"
             )
         )
         writingsItems.add(
             ContentModel(
                 "https://velog.io/@one_coin/posts",
                 "https://velog.velcdn.com/images/one_coin/post/c9d35389-b7fb-472b-b613-aa7e635d7d1e/image.png",
-                "title4"
+                "재현's blog"
             )
         )
         writingsItems.add(
             ContentModel(
                 "https://crablo12.tistory.com/",
                 "https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fc7lcrs%2FbtsGayCEjI6%2FjsEAOZcb4O3Diz5BgHI1N0%2Fimg.png",
-                "title5"
+                "은별's blog"
             )
         )
 
@@ -122,12 +122,8 @@ class MainActivity : AppCompatActivity() {
                 val intent = Intent(baseContext,DetailActivity::class.java)
                 //LoginActivity에서 전달된 데이터를 가져옴-이름,이메일
                 // name = intent.getStringExtra("name")
-                email = intent.getStringExtra("email")
-
-
-                //DetailActivity로 데이터를 전달-이름,이메일
-                // intent.putExtra("name",name)
                 intent.putExtra("email",email)
+
 
                 startActivity(intent)
                 overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
@@ -143,10 +139,10 @@ class MainActivity : AppCompatActivity() {
 
     private fun initView() {
         image = arrayOf(
-            R.drawable.one
+            R.drawable.image_1
         )
         memberButton1 = findViewById(R.id.member1)
-        memberButton1.setImageResource(R.drawable.one)
+        memberButton1.setImageResource(R.drawable.image_1)
         memberButton1.setOnClickListener {
             val intent = Intent(this@MainActivity, MyPageActivity::class.java)
             intent.putExtra("image", image[0])
@@ -203,11 +199,14 @@ class MainActivity : AppCompatActivity() {
 
     //랜덤 이미지 목록
     val imageArray = arrayOf(
-        R.drawable.one,
-        R.drawable.three,
-        R.drawable.four,
-        R.drawable.five,
-        R.drawable.six
+        R.drawable.image_2,
+        R.drawable.image_3,
+        R.drawable.image_4,
+        R.drawable.image_5,
+        R.drawable.image_6,
+        R.drawable.image_7,
+        R.drawable.image_8,
+        R.drawable.image_9
     )
     private fun randomImage(imageView: ImageView) {
         val randomIndex = (imageArray.indices).random()

@@ -51,6 +51,8 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="10dp"
             android:text="로그아웃"
+            android:textSize="18dp"
+            android:fontFamily="@font/skybori"
             app:layout_constraintBottom_toBottomOf="@+id/logoBtn"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintLeft_toRightOf="@+id/logoBtn"
@@ -61,6 +63,8 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="10dp"
             android:text="email"
+            android:textStyle="bold"
+            android:fontFamily="@font/skybori"
             app:layout_constraintTop_toBottomOf="@+id/logoutBtn"
             app:layout_constraintStart_toStartOf="@+id/logoutBtn"
             app:layout_constraintEnd_toEndOf="parent" />
@@ -86,7 +90,7 @@
 
 
             <!-- 프로필 사진 삽입 -->
-            <LinearLayout
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/layout_Main"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -94,16 +98,29 @@
                 android:gravity="center">
 
                 <!-- ImageButton -->
-                <ImageButton
-                    android:id="@+id/member1"
+                <ImageView
+                    android:id="@+id/img_member1"
                     android:layout_width="90dp"
                     android:layout_height="90dp"
                     android:layout_margin="10dp"
-                    android:padding="10dp"
                     android:background="@drawable/circular_background"
                     android:clipToOutline="true"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/person2" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <ImageView
+                    android:id="@+id/member1"
+                    android:layout_width="87dp"
+                    android:layout_height="87dp"
+                    android:background="@drawable/radius"
+                    android:clipToOutline="true"
+                    android:scaleType="centerCrop"
+                    app:layout_constraintTop_toTopOf="@+id/img_member1"
+                    app:layout_constraintStart_toStartOf="@+id/img_member1"
+                    app:layout_constraintEnd_toEndOf="@+id/img_member1"
+                    app:layout_constraintBottom_toBottomOf="@+id/img_member1" />
 
                 <!--이름 -->
                 <TextView
@@ -113,90 +130,144 @@
                     android:layout_marginTop="5dp"
                     android:layout_marginBottom="5dp"
                     android:text="고은별"
+                    android:textSize="17dp"
+                    android:fontFamily="@font/skybori"
                     android:src="@drawable/addicon"
-                    android:visibility="visible" />
-            </LinearLayout>
-            <LinearLayout
+                    android:visibility="visible"
+                    app:layout_constraintTop_toBottomOf="@+id/img_member1"
+                    app:layout_constraintStart_toStartOf="@+id/img_member1"
+                    app:layout_constraintEnd_toEndOf="@+id/img_member1"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:gravity="center">
 
                 <!-- ImageButton -->
-                <ImageButton
+                <ImageView
+                    android:id="@+id/img_member2"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/circular_background"
+                    android:clipToOutline="true"
+                    android:scaleType="centerCrop"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+                <ImageView
                     android:id="@+id/member2"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_margin="10dp"
-                    android:background="@drawable/circular_background"
-                    android:padding="10dp"
+                    android:layout_width="77dp"
+                    android:layout_height="77dp"
+                    android:background="@drawable/radius"
                     android:clipToOutline="true"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/person2" />
+                    app:layout_constraintTop_toTopOf="@+id/img_member2"
+                    app:layout_constraintStart_toStartOf="@+id/img_member2"
+                    app:layout_constraintEnd_toEndOf="@+id/img_member2"
+                    app:layout_constraintBottom_toBottomOf="@+id/img_member2" />
 
 
-            </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-            <LinearLayout
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:gravity="center">
 
                 <!-- ImageButton -->
-                <ImageButton
+                <ImageView
+                    android:id="@+id/img_member3"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/circular_background"
+                    android:clipToOutline="true"
+                    android:scaleType="centerCrop"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+                <ImageView
                     android:id="@+id/member3"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_margin="10dp"
-                    android:background="@drawable/circular_background"
-                    android:padding="10dp"
+                    android:layout_width="77dp"
+                    android:layout_height="77dp"
+                    android:background="@drawable/radius"
                     android:clipToOutline="true"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/person2" />
+                    app:layout_constraintTop_toTopOf="@+id/img_member3"
+                    app:layout_constraintStart_toStartOf="@+id/img_member3"
+                    app:layout_constraintEnd_toEndOf="@+id/img_member3"
+                    app:layout_constraintBottom_toBottomOf="@+id/img_member3" />
 
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
-            </LinearLayout>
-            <LinearLayout
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:gravity="center">
 
                 <!-- ImageButton -->
-                <ImageButton
+                <ImageView
+                    android:id="@+id/img_member4"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/circular_background"
+                    android:clipToOutline="true"
+                    android:scaleType="centerCrop"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+                <ImageView
                     android:id="@+id/member4"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_margin="10dp"
-                    android:background="@drawable/circular_background"
-                    android:padding="10dp"
+                    android:layout_width="77dp"
+                    android:layout_height="77dp"
+                    android:background="@drawable/radius"
                     android:clipToOutline="true"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/person2" />
+                    app:layout_constraintTop_toTopOf="@+id/img_member4"
+                    app:layout_constraintStart_toStartOf="@+id/img_member4"
+                    app:layout_constraintEnd_toEndOf="@+id/img_member4"
+                    app:layout_constraintBottom_toBottomOf="@+id/img_member4" />
 
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
-            </LinearLayout>
-            <LinearLayout
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:gravity="center">
 
                 <!-- ImageButton -->
-                <ImageButton
-                    android:id="@+id/member5"
+                <ImageView
+                    android:id="@+id/img_member5"
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:layout_margin="10dp"
                     android:background="@drawable/circular_background"
-                    android:padding="10dp"
                     android:clipToOutline="true"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/person2" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+                <ImageView
+                    android:id="@+id/member5"
+                    android:layout_width="77dp"
+                    android:layout_height="77dp"
+                    android:background="@drawable/radius"
+                    android:clipToOutline="true"
+                    android:scaleType="centerCrop"
+                    app:layout_constraintTop_toTopOf="@+id/img_member5"
+                    app:layout_constraintStart_toStartOf="@+id/img_member5"
+                    app:layout_constraintEnd_toEndOf="@+id/img_member5"
+                    app:layout_constraintBottom_toBottomOf="@+id/img_member5" />
 
-            </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>
 
     </HorizontalScrollView>
