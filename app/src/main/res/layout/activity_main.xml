@@ -60,12 +60,11 @@
             android:id="@+id/email"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="100dp"
             android:text="email"
             android:textStyle="bold"
             android:fontFamily="@font/skybori"
             app:layout_constraintBottom_toBottomOf="@+id/toplayout"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintEnd_toEndOf="@id/logoutBtn" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
