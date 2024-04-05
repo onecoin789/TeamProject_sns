@@ -117,6 +117,7 @@ class JoinActivity :checkValidation, AppCompatActivity() {
                 intent.putExtra("password", userInfo.password)
                 setResult(RESULT_OK, intent)
                 finish()
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
             }
         }
 

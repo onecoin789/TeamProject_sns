@@ -30,7 +30,8 @@
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:layout_marginTop="80dp"
-            android:src="@drawable/radius"
+            android:background="@drawable/radius"
+            android:clipToOutline="true"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -42,7 +43,8 @@
             android:layout_marginStart="0dp"
             android:layout_marginTop="30dp"
             android:text="이름"
-            android:textSize="30sp"
+            android:fontFamily="@font/skybori"
+            android:textSize="32sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/img_My_Main" />
@@ -53,7 +55,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:text="e_mail"
-            android:textSize="20sp"
+            android:fontFamily="@font/skybori"
+            android:textSize="22sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/text_My_Name" />
