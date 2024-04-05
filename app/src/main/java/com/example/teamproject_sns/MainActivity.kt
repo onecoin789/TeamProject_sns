@@ -3,9 +3,8 @@ package com.example.teamproject_sns
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
+import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.teamproject_sns.Adapter.MyAdapter
@@ -15,6 +14,13 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var newRecyclerView: RecyclerView
     private lateinit var newArrayList: ArrayList<MainInfo>
+//    private val imageArray = arrayOf(
+//        R.drawable.one,
+//        R.drawable.three,
+//        R.drawable.four,
+//        R.drawable.five,
+//        R.drawable.six
+//    )
     lateinit var image : Array<Int>
     lateinit var name : Array<String>
     lateinit var email : Array<String>
@@ -29,40 +35,35 @@ class MainActivity : AppCompatActivity() {
 
         //mainPage 구성
         image = arrayOf(
-            R.drawable.one,
-            R.drawable.three,
-            R.drawable.four,
-            R.drawable.five,
-            R.drawable.six,
+            R.drawable.one
         )
         name = arrayOf(
-            "asd1",
-            "asd2",
-            "asd3",
-            "asd4",
-            "asd5"
+            "asd1"
         )
         email = arrayOf(
-            "asd1@naver.com",
-            "asd2@naver.com",
-            "asd3@naver.com",
-            "asd4@naver.com",
-            "asd5@naver.com"
+            "asd1@naver.com"
         )
         til = arrayOf(
-            "TIL1",
-            "TIL2",
-            "TIL3",
-            "TIL4",
-            "TIL5"
+            "TIL1"
         )
         text = arrayOf(
-            "소개1",
-            "소개2",
-            "소개3",
-            "소개4",
-            "소개5"
+            "소개1"
         )
+
+//        var img1 = findViewById<ImageView>(R.id.img1)
+//        var img2 =findViewById<ImageView>(R.id.img2)
+//        var img3 =findViewById<ImageView>(R.id.img3)
+//        var img4 =findViewById<ImageView>(R.id.img4)
+//
+//        setImage(img1)
+//        setImage(img2)
+//        setImage(img3)
+//        setImage(img4)
+
+
+
+
+
 
 
         //newRecyclerView 설정
@@ -74,6 +75,11 @@ class MainActivity : AppCompatActivity() {
         getUserData()
 
     }
+//    private fun setImage(imageView: ImageView) {
+//        val randomIndex = (imageArray.indices).random()
+//        val randomImageResourceId = imageArray[randomIndex]
+//        imageView.setImageResource(randomImageResourceId)
+//    }
 
     //index에 맞는 이미지와 정보 출력
     private fun getUserData() {
