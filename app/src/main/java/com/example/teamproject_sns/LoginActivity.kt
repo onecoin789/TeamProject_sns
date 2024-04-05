@@ -26,7 +26,7 @@ class LoginActivity : AppCompatActivity(), checkValidation {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        //name =>로그인단에서는 보여지지 않게끔 ui조정
+        //name => 로그인단에서는 보여지지 않게끔 ui조정
         et_name = findViewById(R.id.et_name)
 
         //email
