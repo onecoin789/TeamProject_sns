@@ -34,12 +34,11 @@ class MyPageActivity : AppCompatActivity() {
         val imageGet = bundle!!.getInt("image")
         val nameGet = bundle?.getString("name")
         val emailGet = bundle?.getString("email")
-        val textGet = bundle?.getString("text")
 
         imageMy.setImageResource(imageGet)
         nameMy.text = nameGet
         emailMy.text = emailGet
-        textMy.text = textGet
+
 
 
 

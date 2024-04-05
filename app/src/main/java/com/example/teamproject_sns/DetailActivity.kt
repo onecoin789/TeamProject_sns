@@ -8,6 +8,7 @@ import org.w3c.dom.Text
 
 
 class DetailActivity : AppCompatActivity() {
+    private var email:String? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail)
@@ -21,6 +22,14 @@ class DetailActivity : AppCompatActivity() {
         val imageGet = bundle!!.getInt("image")
         val tilGet = bundle?.getString("til")
         val emailGet = bundle?.getString("email")
+
+        //  name = intent.getStringExtra("name")
+        email = intent.getStringExtra("email")
+
+        //TextView에 데이터 설정
+        emailMy.text = email
+        emailMy2.text = email
+
 
         imageMy.setImageResource(imageGet)
         emailMy.text = emailGet
