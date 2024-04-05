@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/img_Item"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/radius"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="10dp"
+        android:clipToOutline="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <TextView
+        android:id="@+id/text_Item_Mail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="email"
+        android:textStyle="bold"
+        android:textSize="22sp"
+        android:fontFamily="@font/skybori"
+        android:layout_marginStart="20dp"
+        app:layout_constraintStart_toEndOf="@+id/img_Item"
+        app:layout_constraintTop_toTopOf="@+id/img_Item"
+        app:layout_constraintBottom_toBottomOf="@+id/img_Item"/>
+
+    <TextView
+        android:id="@+id/text_Item_Text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="text"
+        android:fontFamily="@font/skybori"
+        android:textSize="18sp"
+        android:layout_marginEnd="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/text_Item_Mail"
+        app:layout_constraintBottom_toBottomOf="@+id/text_Item_Mail" />
+
+
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

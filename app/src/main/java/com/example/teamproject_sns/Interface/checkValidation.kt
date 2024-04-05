@@ -1,6 +1,7 @@
 package com.example.teamproject_sns
-import android.widget.EditText
+
 import android.graphics.Color
+import android.widget.EditText
 import java.util.regex.Pattern
 
 interface checkValidation {
@@ -13,11 +14,13 @@ interface checkValidation {
         if (!email.matches(emailPattern.toRegex()))
             return 3
         if (password.length < 8 || !password.contains(Regex("[A-Z]"))
-            || !password.contains(Regex("[^A-Za-z0-9]")))
+            || !password.contains(Regex("[^A-Za-z0-9]"))
+        )
             return 4
         return 1
     }
 
+    //이메일 유효성 검사
     fun checkEmail(id: EditText): Boolean {
         val email = id.text.toString().trim()
         val emailPattern = android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()
@@ -42,24 +45,25 @@ interface checkValidation {
             return false
         }
     }
-}
-fun checkConfirmPw(pw:EditText,confirmpw:EditText): Boolean{
-    val pwText = pw.text.toString().trim()
-    val confirmpwText = confirmpw.text.toString().trim()
-    if (pwText == confirmpwText) {
-        return true
-        pw.setTextColor(Color.parseColor("#000000"))
-    }
-    else {
-        return false
-        pw.setTextColor(Color.parseColor("#D32222"))
 
+    fun checkConfirmPw(pw: EditText, confirmpw: EditText): Boolean {
+        val pwText = pw.text.toString().trim()
+        val confirmpwText = confirmpw.text.toString().trim()
+        if (pwText == confirmpwText) {
+            return true
+            pw.setTextColor(Color.parseColor("#000000"))
+        } else {
+            return false
+            pw.setTextColor(Color.parseColor("#D32222"))
+
+        }
     }
 
+    fun nullCheck(text: String): Boolean {
+        if (text.isEmpty())
+            return true
+        else
+            return false
+    }
 }
-fun nullCheck(text: String):Boolean{
-    if (text.isEmpty())
-        return true
-    else
-        return false
-}
+
