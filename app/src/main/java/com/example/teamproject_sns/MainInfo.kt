@@ -5,5 +5,4 @@ data class MainInfo(
     val name : String,
     val email : String,
     val til : String,
-    val text : String
 )

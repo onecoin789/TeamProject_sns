@@ -14,10 +14,12 @@ interface checkValidation {
         if (!email.matches(emailPattern.toRegex()))
             return 3
         if (password.length < 8 || !password.contains(Regex("[A-Z]"))
-            || !password.contains(Regex("[^A-Za-z0-9]")))
+            || !password.contains(Regex("[^A-Za-z0-9]"))
+        )
             return 4
         return 1
     }
+
     //이메일 유효성 검사
     fun checkEmail(id: EditText): Boolean {
         val email = id.text.toString().trim()
@@ -43,25 +45,25 @@ interface checkValidation {
             return false
         }
     }
-    fun checkConfirmPw(pw:EditText,confirmpw:EditText): Boolean{
+
+    fun checkConfirmPw(pw: EditText, confirmpw: EditText): Boolean {
         val pwText = pw.text.toString().trim()
         val confirmpwText = confirmpw.text.toString().trim()
         if (pwText == confirmpwText) {
             return true
             pw.setTextColor(Color.parseColor("#000000"))
-        }
-        else {
+        } else {
             return false
             pw.setTextColor(Color.parseColor("#D32222"))
 
         }
     }
 
-    fun checkNull(text: String): Boolean {
-        if (text.isNullOrEmpty()){
-            return false
-        } else
+    fun nullCheck(text: String): Boolean {
+        if (text.isEmpty())
             return true
+        else
+            return false
     }
 }
 

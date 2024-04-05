@@ -13,14 +13,12 @@ class DetailActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail)
 
-        val imageMy = findViewById<ImageView>(R.id.img_Detail_Title)
-        val emailMy = findViewById<TextView>(R.id.text_Detail_Mail)
-        val emailMy2 = findViewById<TextView>(R.id.text_Detail_Mail2)
-        val tilMy = findViewById<TextView>(R.id.text_Detail_Text)
+
+        val emailMy = findViewById<TextView>(R.id.emailTextView)
+
+
 
         val bundle: Bundle? = intent.extras
-        val imageGet = bundle!!.getInt("image")
-        val tilGet = bundle?.getString("til")
         val emailGet = bundle?.getString("email")
 
         //  name = intent.getStringExtra("name")
@@ -28,13 +26,10 @@ class DetailActivity : AppCompatActivity() {
 
         //TextView에 데이터 설정
         emailMy.text = email
-        emailMy2.text = email
 
 
-        imageMy.setImageResource(imageGet)
+
         emailMy.text = emailGet
-        emailMy2.text = emailGet
-        tilMy.text = tilGet
 
         val btn_close = findViewById<ImageView>(R.id.img_Detail_Close);
         btn_close.setOnClickListener {

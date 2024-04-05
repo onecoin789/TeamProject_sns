@@ -44,8 +44,6 @@
         <activity
             android:name=".StartActivity"
             android:exported="true">
-
-
         </activity>
         <activity
             android:name=".DetailActivity"
@@ -64,7 +62,11 @@
         <activity
             android:name=".MainActivity"
             android:exported="false">
+        </activity>
 
+        <activity
+            android:name=".MyPageActivity"
+            android:exported="false">
         </activity>
 
     </application>

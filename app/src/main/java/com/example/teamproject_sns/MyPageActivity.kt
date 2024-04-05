@@ -28,7 +28,6 @@ class MyPageActivity : AppCompatActivity() {
         val imageMy = findViewById<ImageView>(R.id.img_My_Main)
         val nameMy = findViewById<TextView>(R.id.text_My_Name)
         val emailMy = findViewById<TextView>(R.id.text_My_Email)
-        val textMy = findViewById<TextView>(R.id.text_My_Text)
 
         val bundle: Bundle? = intent.extras
         val imageGet = bundle!!.getInt("image")
@@ -66,12 +65,6 @@ class MyPageActivity : AppCompatActivity() {
             "TIL2",
             "TIL3",
         )
-        //lateinit property text has not been initialized 오류때문에 초기화만 시키고 값은 비워놨습니다
-        text = arrayOf(
-            "",
-            "",
-            ""
-        )
 
 
 
@@ -97,7 +90,7 @@ class MyPageActivity : AppCompatActivity() {
 
         for (i in image.indices) {
 
-            val info = MainInfo(image[i], name[i], email[i],til[i], text[i])
+            val info = MainInfo(image[i], name[i], email[i],til[i])
             newArrayList.add(info)
 
             //intent로 DetailActivity에 정보 전달
@@ -112,7 +105,6 @@ class MyPageActivity : AppCompatActivity() {
                     intent.putExtra("email",newArrayList[position].email)
                     intent.putExtra("name",newArrayList[position].name)
                     intent.putExtra("til",newArrayList[position].til)
-                    intent.putExtra("text",newArrayList[position].text)
                     startActivity(intent)
                 }
             })
