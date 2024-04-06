@@ -13,15 +13,35 @@
     <string name="exist_email">다른 사용자가 사용하고 있는 이메일 입니다.</string>
 
     <!--layout-->
-    <string name="start_title" translatable="false">TIL :</string>
-    <string name="til" translatable="false">Today I Learned</string>
-
     <!--login-->
-    <string name="signIn_id">이메일</string>
+    <string name="signIn_email">이메일</string>
     <string name="signIn_pw">비밀번호</string>
     <string name="signIn_login">로그인</string>
     <string name="signIn_signup">회원가입</string>
     <string name="signIn_account">계정이 없으신가요?</string>
+    <string name="start_title" translatable="false">TIL :</string>
+    <string name="til" translatable="false">Today I Learned</string>
+
+    <!--signUp-->
+    <string name="signUp_name">이름</string>
+    <string name="signUp_checkPw">비밀번호 확인</string>
+    <string name="signUp_camera">카메라</string>
+    <string name="signUp_gallery">갤러리</string>
+
+    <!--main-->
+    <string name="main_logOut">로그아웃</string>
+    <string name="main_sampleName" translatable="false">고은별</string>
+
+    <!--detail-->
+    <string name="detail_description">"   설명"</string>
+
+    <!--item-->
+    <string name="item_text" translatable="false">text</string>
+
+    <!--mainBoard-->
+    <string name="maingBoard_comment">한줄평</string>
+
+
 
 
 </resources>

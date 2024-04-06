@@ -10,12 +10,18 @@
     <string name="exist_email">This email is already in use</string>
 
     <!--login-->
-    <string name="signIn_id">Email</string>
+    <string name="signUp_name">name</string>
+    <string name="signUp_camera">camera</string>
+    <string name="signUp_gallery">gallery</string>
+    <string name="signIn_email">Email</string>
     <string name="signIn_pw">Password</string>
     <string name="signIn_login">Login</string>
     <string name="signIn_signup">Sign up</string>
     <string name="signIn_account">Don\'t have an account?</string>
-
+    <string name="main_logOut">Log out</string>
+    <string name="detail_description">"   Description"</string>
+    <string name="signUp_checkPw">Confirm Password</string>
+    <string name="maingBoard_comment">comment</string>
 
 
 </resources>
