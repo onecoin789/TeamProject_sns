@@ -59,7 +59,7 @@ class MyPageActivity : AppCompatActivity() {
         til = arrayOf(
             "TIL1",
             "TIL2",
-            "TIL3",
+            "TIL3"
         )
 
 
